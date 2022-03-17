@@ -1,5 +1,4 @@
 import "./App.css";
-import logo from "./ivory studio.png";
 
 import {
   Layout,
@@ -22,9 +21,11 @@ import {
   EditOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
-
+import TopHeader from "./components/Header";
+import DemoSass from "./containers/DemoSass";
+import "./assets/styles/main.scss";
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 const { Search } = Input;
 
 const columns = [
@@ -272,119 +273,78 @@ const data = [
 
 function App() {
   return (
-    <Layout>
-      <Header className="header">
-        <Row justify="space-between">
-          <Col className="gutter-row" span={4}>
-            <div style={{ position: "relative", width: "60%", height: "100%" }}>
-              <img
-                className="logo"
-                src={logo}
-                alt="logo"
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
-          </Col>
-          <Col className="gutter-row" span={4}>
-            <Space size="middle">
-              <Badge count={5}>
-                <Avatar
-                  shape="square"
-                  size={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-                  icon={<MessageOutlined />}
-                />
-              </Badge>
-              <Badge count={0} showZero>
-                <Avatar
-                  shape="square"
-                  size={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-                  icon={<BellOutlined />}
-                />
-              </Badge>
-              <Avatar
-                shape="square"
-                size={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-                icon={<UserOutlined />}
-              />
-            </Space>
-          </Col>
-        </Row>
-      </Header>
-      <Layout>
-        <Sider
-          width={200}
-          className="site-layout-background"
-          breakpoint="lg"
-          collapsedWidth="0"
-        >
-          <Menu
-            mode="inline"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1"]}
-            style={{ height: "100%", borderRight: 0 }}
-          >
-            <SubMenu
-              key="sub1"
-              icon={<UserOutlined />}
-              title="Quản lý sinh viên"
-            >
-              <Menu.Item key="1">Danh sách sinh viên</Menu.Item>
-            </SubMenu>
-            <SubMenu
-              key="sub2"
-              icon={<AreaChartOutlined />}
-              title="Thống kê kết quả"
-            >
-              <Menu.Item key="5">Theo niên khóa</Menu.Item>
-              <Menu.Item key="6">Theo ngành</Menu.Item>
-              <Menu.Item key="7">Theo lớp</Menu.Item>
-            </SubMenu>
-          </Menu>
-        </Sider>
-        <Layout style={{ padding: "0 24px 24px" }}>
-          <Content
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-            }}
-          >
-            <Input.Group size="large">
-              <Row>
-                <Col span={5}>
-                  <Button
-                    type="primary"
-                    size="large"
-                    style={{
-                      marginBottom: 16,
-                    }}
-                  >
-                    Thêm sinh viên
-                  </Button>
-                </Col>
-                <Col span={8}>
-                  <Search placeholder="Tìm kiếm" allowClear size="large" />
-                </Col>
-              </Row>
-            </Input.Group>
-            <Table
-              rowSelection={{
-                type: "checkbox",
-              }}
-              columns={columns}
-              dataSource={data}
-            />
-          </Content>
-        </Layout>
-      </Layout>
-    </Layout>
+    // <Layout>
+    //   <TopHeader />
+    //   <Layout>
+    //     <Sider
+    //       width={200}
+    //       className="site-layout-background"
+    //       breakpoint="lg"
+    //       collapsedWidth="0"
+    //     >
+    //       <Menu
+    //         mode="inline"
+    //         defaultSelectedKeys={["1"]}
+    //         defaultOpenKeys={["sub1"]}
+    //         style={{ height: "100%", borderRight: 0 }}
+    //       >
+    //         <SubMenu
+    //           key="sub1"
+    //           icon={<UserOutlined />}
+    //           title="Quản lý sinh viên"
+    //         >
+    //           <Menu.Item key="1">Danh sách sinh viên</Menu.Item>
+    //         </SubMenu>
+    //         <SubMenu
+    //           key="sub2"
+    //           icon={<AreaChartOutlined />}
+    //           title="Thống kê kết quả"
+    //         >
+    //           <Menu.Item key="5">Theo niên khóa</Menu.Item>
+    //           <Menu.Item key="6">Theo ngành</Menu.Item>
+    //           <Menu.Item key="7">Theo lớp</Menu.Item>
+    //         </SubMenu>
+    //       </Menu>
+    //     </Sider>
+    //     <Layout style={{ padding: "0 24px 24px" }}>
+    //       <Content
+    //         className="site-layout-background"
+    //         style={{
+    //           padding: 24,
+    //           margin: 0,
+    //           minHeight: 280,
+    //         }}
+    //       >
+    //         <Input.Group size="large">
+    //           <Row>
+    //             <Col span={5}>
+    //               <Button
+    //                 type="primary"
+    //                 size="large"
+    //                 style={{
+    //                   marginBottom: 16,
+    //                 }}
+    //               >
+    //                 Thêm sinh viên
+    //               </Button>
+    //             </Col>
+    //             <Col span={8}>
+    //               <Search placeholder="Tìm kiếm" allowClear size="large" />
+    //             </Col>
+    //           </Row>
+    //         </Input.Group>
+    //         <Table
+    //           rowSelection={{
+    //             type: "checkbox",
+    //           }}
+    //           columns={columns}
+    //           dataSource={data}
+    //         />
+    //       </Content>
+    //     </Layout>
+    //   </Layout>
+    // </Layout>
+    <DemoSass />
   );
 }
 
