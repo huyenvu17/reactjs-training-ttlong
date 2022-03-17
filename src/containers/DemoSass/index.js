@@ -5,7 +5,7 @@ export default class DemoSass extends Component {
     return (
       <div className="campus">
         <div className="campus__contact">
-          <div> +040 354 658 252</div>
+          <div> +040 354 658 25</div>
           <div>
             <input type="text" placeholder="Search" />
           </div>
